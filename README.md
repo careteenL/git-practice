@@ -77,3 +77,7 @@ git checkout -- <file>... //to discard changes in working directory
 - 比对暂存区和上一条commit的区别`git diff --staged`或者--cached
 - 比对工作目录和暂存区的区别`git diff`
 - 比对工作目录和上一条commit的区别`git diff HEAD`,新建的文件没有被追踪，所以是看不到工作目录新建文件和commit的区别
+
+### rebase 变基？
+
+ketingwang modified
