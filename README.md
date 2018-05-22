@@ -90,10 +90,16 @@ ketingwang modified agin
 
 ### 刚刚提交的代码，发现写错了怎么办？
 
-利用`--amend`参数进行修正 错字
+利用`--amend`参数进行修正
 
 注：并不是修改上一次commit，而是生成新的commit取代上一次commit。
 ```shell
 git commit --amend
 ```
 ![git_commit--amend](./imgs/git_commit--amend.png)
+
+### 写错的不是最新的提交，而是倒数第二次提交？
+
+- 使用方式是 git rebase -i 目标commit；
+- 在编辑界面中指定需要操作的 commits 以及操作类型；
+- 操作完成之后用 git rebase --continue 来继续 rebase 过程。
