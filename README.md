@@ -103,3 +103,4 @@ git commit --amend
 - 使用方式是 git rebase -i 目标commit；
 - 在编辑界面中指定需要操作的 commits 以及操作类型；
 - 操作完成之后用 git rebase --continue 来继续 rebase 过程。
+![git_rebase-i](./imgs/git_rebase-i.png)
