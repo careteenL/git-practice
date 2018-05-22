@@ -3,6 +3,7 @@ git-practice
 
 
 ### 分布式 VCS 的优缺点：
+
 #### 分布式 VCS 的优点：
 
 - 大多数的操作可以在本地进行，所以速度更快，而且由于无需联网，所以即使不在公司甚至没有在联网，你也可以提交代码、查看历史，从而极大地减小了开发者的网络条件和物理位置的限制（例如，你可以在飞机上提交代码、切换分支等等）；
@@ -77,3 +78,10 @@ git checkout -- <file>... //to discard changes in working directory
 - 比对暂存区和上一条commit的区别`git diff --staged`或者--cached
 - 比对工作目录和暂存区的区别`git diff`
 - 比对工作目录和上一条commit的区别`git diff HEAD`,新建的文件没有被追踪，所以是看不到工作目录新建文件和commit的区别
+
+### rebase 变基？
+```bash
+git rebase master
+```
+
+careteenL modified
