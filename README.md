@@ -90,7 +90,7 @@ ketingwang modified agin
 
 ### 刚刚提交的代码，发现写错了怎么办？
 
-利用`--amend`参数进行修正
+利用`--amend`参数进行修正 错字
 
 注：并不是修改上一次commit，而是生成新的commit取代上一次commit。
 ```shell
