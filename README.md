@@ -80,10 +80,20 @@ git checkout -- <file>... //to discard changes in working directory
 - 比对工作目录和上一条commit的区别`git diff HEAD`,新建的文件没有被追踪，所以是看不到工作目录新建文件和commit的区别
 
 ### rebase 变基？
-```bash
+```shell
 git rebase master
 ```
 
 careteenL modified
 
 ketingwang modified agin
+
+### 刚刚提交的代码，发现写错了怎么办？
+
+利用`--amend`参数进行修正 错字
+
+注：并不是修改上一次commit，而是生成新的commit取代上一次commit。
+```shell
+git commit --amend
+```
+![git_commit--amend](./imgs/git_commit--amend.png)
