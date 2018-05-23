@@ -104,3 +104,40 @@ git commit --amend
 - 在编辑界面中指定需要操作的 commits 以及操作类型；
 - 操作完成之后用 git rebase --continue 来继续 rebase 过程。
 ![git_rebase-i](./imgs/git_rebase-i.png)
+
+
+### 比错还错，想直接取消刚才的提交？
+```shell
+git reset --hard 目标commit
+git reset --hard HEAD^
+```
+
+### 想丢弃的不是最新的提交？
+
+> 方式一：
+
+```shell
+// git rebase -i 目标commit
+git rebase -i HEAD^^
+// 进入交互页面编辑删除 想丢弃的commit即可
+
+// 然后继续操作
+git rebase --continue
+```
+![git_rebase-i-another](./imgs/git_rebase-i-another.png)
+
+> 方式二：
+
+```shell
+// git rebase --onto 目标commit 起点commit 终点commit
+git rebase --onto HEAD^^ HEAD^ master
+```
+![git_rebase--onto](./imgs/git_rebase--onto.png)
+
+### 代码push上去了才发现写错了？
+
+> 方式一：
+
+```shell
+
+```
