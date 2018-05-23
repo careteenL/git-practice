@@ -136,9 +136,15 @@ git rebase --onto HEAD^^ HEAD^ master
 
 ### 代码push上去了才发现写错了？
 
-> 方式一：
+> 场景一：出错的提交在自己的分支
 
 ```shell
 
 ```
-it's error push !
+
+> 场景二：出错的提交在master
+
+```shell
+// git revert 目标commit
+git revert HEAD^
+```
