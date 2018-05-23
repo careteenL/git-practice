@@ -139,12 +139,27 @@ git rebase --onto HEAD^^ HEAD^ master
 > 场景一：出错的提交在自己的分支
 
 ```shell
+// git rebase -i 目标commit
+git rebase -i HEAD^^
+// 进入交互页面编辑删除 想丢弃的commit即可
+
+// 然后继续操作
+git rebase --continue
+
+//git push origin 当前分支 -f -f为--force简写，不解决冲突强制提交。
+git push origin branch1 -f
 
 ```
 
 > 场景二：出错的提交在master
 
+此时不能像场景一强制提交，因为master分支可能存在同事的push，强制提交会将他们的提交内容抹掉
+
+使用revert将错误撤销
 ```shell
 // git revert 目标commit
 git revert HEAD^
+git add .
+git commit -m 'xxx'
+git push
 ```
