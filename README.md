@@ -142,3 +142,5 @@ git rebase --onto HEAD^^ HEAD^ master
 
 ```
 it's error push !
+
+error push again
