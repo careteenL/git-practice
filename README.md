@@ -141,3 +141,4 @@ git rebase --onto HEAD^^ HEAD^ master
 ```shell
 
 ```
+it's error push !
