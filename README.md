@@ -155,7 +155,7 @@ git push origin branch1 -f
 
 此时不能像场景一强制提交，因为master分支可能存在同事的push，强制提交会将他们的提交内容抹掉
 
-使用revert将错误撤销 .....
+使用revert将错误撤销 ......
 ```shell
 // git revert 目标commit
 git revert HEAD^
