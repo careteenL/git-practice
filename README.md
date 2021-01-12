@@ -83,10 +83,13 @@ git checkout -- <file>... //to discard changes in working directory
 ```shell
 git rebase master
 ```
-
+```shell
 careteenL modified
 
 ketingwang modified agin
+# 第一次修改
+# 第二次修改
+```
 
 ### 刚刚提交的代码，发现写错了怎么办？
 
