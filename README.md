@@ -166,3 +166,70 @@ git add .
 git commit -m 'xxx'
 git push
 ```
+
+### 线上紧急热修复可使用 worktree ？
+
+> 场景：当你正在 feature 分支开发新功能，线上版本紧急错误需要你基于 master 分支做修复上线
+
+#### 解法 1
+
+先将本地代码提交至 feature 分支，然后再切到 master 分支做热修复
+
+```shell
+# 当前在 feature
+git add .
+git commit -m '暂存 feature 代码'
+git push
+git checkout master
+# 修改master 代码并 push
+# 再切回来继续开发
+git checkout feature
+```
+
+> 缺点：若当前 feature 分支正在运行耗时比较长的功能测试，需要等待热修复后再切换重新运行
+
+#### 解法 2
+
+先将本地代码 stash，然后切到 master 热修复后，再回来 pop
+
+```shell
+# 当前在 feature
+git stash
+git checkout master
+# 修改master 代码并 push
+# 再切回来继续开发
+git checkout feature
+git stash pop
+```
+
+> 缺点：同解法 1
+
+#### 解法 3
+
+clone 一份 master 代码到本地其他目录下
+
+```shell
+git clone https:xxx
+# 修改master 代码并 push
+```
+
+> 缺点：若仓库比较大，耗时久
+
+#### 解法 4
+
+使用 worktree 另开一个独立工作区
+
+> 实例代码在 ./worktree.js 以及 worktree-feature 分支
+
+```shell
+# 当前在 feature
+# 再当前项目同目录下基于 master 分支新开 hotfix 目录
+git worktree add ../hotfix master
+cd ../hotfix
+# 修改master 代码并 push
+
+# 然后再回到当前目录下继续 feature 分支开发
+cd ../current-project
+```
+
+> 优点：hotfix 与 feature 分支互不干扰
